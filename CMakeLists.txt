@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.5)
+project(mathmaster)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+add_subdirectory(third_party)
+set(GTEST_INCLUDE ./third_party/googletest/googletest/include ./third_party/googletest/googlemock/include)
+add_library(gtest_include INTERFACE)
+target_include_directories(gtest_include INTERFACE ${GTEST_INCLUDE})
+add_subdirectory(core)
+
